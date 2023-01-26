@@ -204,7 +204,7 @@ def supply():
 
 def traffic(website,begin,end):
     global websitesFile
-    websitesFile = website
+    websitesFile = "./torTraffic/"+website
     for num in range(begin,end+1):
          main(num)
     supply()
