@@ -66,27 +66,30 @@ def startTcpdump(filename):
 
 def closeTcpdump():
     time.sleep(2)
-
-    pids = psutil.pids()
-    for pid in pids:
-        try:
-            p = psutil.Process(pid)
-            # get process name according to pid
-            process_name = p.name()
-            # kill process "sleep_test1"
-
-            if 'tcpdump' == process_name:
-                print("kill specific process: name(%s)-pid(%s)" % (process_name, pid))
-                os.kill(pid, signal.SIGKILL)
-        except:
-            try:
-                proid = os.popen('ps -a | grep tcpdump')
-                pids = pattern.findall(proid.read()[:6])
-                print(pids)
-                for i in pids:
-                    os.popen('kill ' + i)
-            except:
-                print('have not closed!!')
+    try:
+        os.popen('ps -ef | grep tcpdump | grep -v grep | cut -c 10-18 | xargs kill')
+    except:
+        print('have not closed!!')
+    # pids = psutil.pids()
+    # for pid in pids:
+    #     try:
+    #         p = psutil.Process(pid)
+    #         # get process name according to pid
+    #         process_name = p.name()
+    #         # kill process "sleep_test1"
+    #
+    #         if 'tcpdump' == process_name:
+    #             print("kill specific process: name(%s)-pid(%s)" % (process_name, pid))
+    #             os.kill(pid, signal.SIGKILL)
+    #     except:
+    #         try:
+    #             proid = os.popen('ps -a | grep tcpdump')
+    #             pids = pattern.findall(proid.read()[:6])
+    #             print(pids)
+    #             for i in pids:
+    #                 os.popen('kill ' + i)
+    #         except:
+    #             print('have not closed!!')
 
 
 
