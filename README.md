@@ -5,7 +5,7 @@
 #去官网下载源码
 mkdir tor
 cd tor
-wget https://dist.torproject.org/tor-0.4.7.12.tar.gz
+wget https://dist.torproject.org/tor-0.4.7.13.tar.gz
 tar -zxvf tor-0.4.7.12.tar.gz
 cd tor-0.4.7.12
 
