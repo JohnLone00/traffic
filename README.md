@@ -6,8 +6,8 @@
 mkdir tor
 cd tor
 wget https://dist.torproject.org/tor-0.4.7.13.tar.gz
-tar -zxvf tor-0.4.7.12.tar.gz
-cd tor-0.4.7.12
+tar -zxvf tor-0.4.7.13.tar.gz
+cd tor-0.4.7.13
 
 #编译
 sudo apt update
