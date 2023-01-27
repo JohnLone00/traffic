@@ -38,3 +38,6 @@ pip3 install requests
 pip3 install redis
 pip3 install BeautifulSoup4
 pip3 install psutil
+cd traffic
+cd torTraffic
+chmod geckodriver 777
