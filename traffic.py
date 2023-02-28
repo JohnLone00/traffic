@@ -150,7 +150,7 @@ def simulation(driver,times,webId,url):
             r.rpush('supply', str(times) + ' ' + webId + ' ' + url)
         return
     if driver.title == '' or 'Server Not Found' in driver.title or '404 NOT Found' in driver.title:
-        with open(badPcapLog, 'a') as badLog:
+        with open(badPcapLog, 'a') as f:
             badLog.write(str(times) + '.' + str(webId) + ".title=" + driver.title + "\n")
             f.write(str(times) + '.' + webId + '.' + '404!!!!' + "\n")
             r.rpush('supply', str(times) + ' ' + webId + ' ' + url)
