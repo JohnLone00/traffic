@@ -23,7 +23,7 @@ make && make install
 #运行Tor
 screen -R tor
 cd src
-vim tor
+vim torrc
 加一行SocksPort localhost:9052
 app/tor -f torrc
 ```
@@ -41,7 +41,7 @@ pip3 install BeautifulSoup4
 pip3 install psutil
 cd traffic
 cd torTraffic
-chmod geckodriver 777
+chmod 777 geckodriver
 ```
 # 设置一下redis
 ``` shell
